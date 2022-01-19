@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="/assets/style.css")>
+</head>
+<body >
+    <%- include ('../components/navbar') %>
+    <div class="container">
+    <p></p>
+    <a href="/mobil/create">Tambah Data</a>
+    <h1>Daftar Mobil (<%= mobil.length %>)</h1>
+    <form action="/mobil">
+      <input type="text" name="keyword">
+      <button type="submit">Cari</button>
+    </form>
+    <div class="row justify-content-center">
+      <% if (mobil.length>0) {%>
+        <% mobil.forEach (function(mobil){ %>
+          <div class="card">
+            <div class="col-sm-12 my-auto">
+              <div class="card card-block w-25">
+                <h4 >Jenis Mobil :<%= mobil.jns_mobil %> </h4>
+                <h4 >Nama Mobil :<%= mobil.nm_mobil %> </h4>
+                <h4 >Harga : 670.000.000 </h4>
+                <!-- <h4 >Harga :<%= mobil.harga %> </h4> -->
+                <a class="btn btn-primary" href="/mobil/<%= mobil._id %>">View Detail</a>
+                <a class="btn btn-success"href="/mobil/update/<%= mobil._id %>/<%= mobil.id %>/<%= mobil.jns_mobil %>/<%= mobil.nm_mobil %>/<%= mobil.harga %>/<%= mobil.password %>">Update</a>
+              <a class="btn btn-danger" href="/mobil/hapus/<%= mobil._id %>">Hapus</a>
+            </div>
+            </div>
+          </div>
+        <% }); %>
+        <% } else { %>
+          <p>Data Mobil Kosong</p>
+
+          <% } %>
+    </div>
+
+    <!-- <footer>
+        <p>adita</p>
+    </footer> -->
+  </div>
+</body>
+</body>
+</html>

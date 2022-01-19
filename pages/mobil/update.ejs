@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <title>Update Data</title>
+</head>
+<body>
+
+    <p></p>
+    <h3>Update Data</h3>
+    <form method="post" action="/mobil/update" enctype="multipart/form-data">
+        <div class="group-input">
+            <label>ID mobil database</label>
+            <input type="text" name="_id" readonly
+            value='<%= mobil._id %>'>
+        </div>
+          <div class="group-input">
+            <label>ID mobil</label>
+            <input type="text" name="id" required
+            value='<%= mobil.id %>'>
+        </div>
+        <div class="group-input">
+            <label>Jenis mobil</label>
+            <input type="text" name="jns_mobil" id="jns_mobil" required
+            value='<%= mobil.jns_mobil %>'>
+        </div>
+        <div class="group-input">
+            <label>Nama</label>
+            <input type="text" name="nm_mobil" id="nm_mobil"required
+            value='<%= mobil.nm_mobil %>'>
+        </div>
+        <div class="group-input">
+            <label>Harga</label>
+            <input type="text" name="harga" id="harga" required
+            value='<%= mobil.harga %>'>
+        </div>
+        <div class="group-input">
+            <label>password</label>
+            <input type="text" name="password" id="password"required
+            value='<%= mobil.password %>'>
+        </div>
+        <div class="input-group"> 
+            <label>Gambar</label>
+            <input class="form-control" type="file" required name="image"> 
+        </div>
+        <button type="submit"  value="Submit">update</button>
+        <a href="/mobil">Kembali</a>
+    </form>
+</body>
+</html>

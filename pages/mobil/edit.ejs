@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Edit Data</title>
+    <link rel="stylesheet" href="/assets/style.css"
+</head>
+<body>
+    <p></p>
+    <a href="/mobil/create">Tambah Mobil</a>
+    <h1>Edit tambah Mobil</h1>
+    <form action="/mobil/<%= mobil._id %>" method="post">
+        <div class="group-input">
+            <label>Jenis Mobil</label>
+            <input type="text" name='jns_mobil' value="<%= mobil.jns_mobil %>">
+            <input type="hidden" name='_id' value="<%= mobil._id %>">
+        </div>
+        <div class="group-input">
+            <label>Nama Mobil</label>
+            <input type="text" name='nm_mobil' value="<%= mobil.nm_mobil %>">
+        </div>
+        <div class="group-input">
+            <label>Harga</label>
+            <input type="text" name='harga' value="<%= mobil.harga %>">
+        </div>
+        <button type="submit">Update</button>
+        <a href="/mobil">Kembali</a>
+    </form>    
+</body>
+</html>
